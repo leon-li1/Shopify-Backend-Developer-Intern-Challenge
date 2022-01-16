@@ -51,8 +51,8 @@ async function updateItem(sku: string, event: FormEvent<HTMLFormElement>) {
         });
         window.location.reload();
     } catch (error) {
-        const errorMsg: string = (error as any)?.response?.data?.detail ?? 'Unknown error';
-        alert('ERROR: ' + errorMsg);
+        const errorMsg: string = (error as any)?.response?.data ?? 'Unknown error';
+        alert(errorMsg);
     }
 }
 
@@ -61,8 +61,8 @@ async function deleteItem(sku: string) {
         await axios.delete(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/item/${sku}`);
         window.location.replace('/');
     } catch (error) {
-        const errorMsg: string = (error as any)?.response?.data?.detail ?? 'Unknown error';
-        alert('ERROR: ' + errorMsg);
+        const errorMsg: string = (error as any)?.response?.data ?? 'Unknown error';
+        alert(errorMsg);
     }
 }
 

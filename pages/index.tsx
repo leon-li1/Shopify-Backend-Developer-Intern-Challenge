@@ -75,8 +75,8 @@ const createItem = async (e: React.FormEvent<HTMLFormElement>) => {
         });
         window.location.replace('/item/' + data.get('sku'));
     } catch (error) {
-        const errorMsg: string = (error as any)?.response?.data?.detail ?? 'Unknown error';
-        alert('ERROR: ' + errorMsg);
+        const errorMsg: string = (error as any)?.response?.data ?? 'Unknown error';
+        alert(errorMsg);
     }
 };
 
