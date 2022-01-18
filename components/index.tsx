@@ -7,7 +7,7 @@ const FormTitle = styled.h3`
 `
 
 const FormInput = styled.input`
-    width: 100%;
+    width: 20em;
     padding: 12px 20px;
     margin: 5px 0;
     box-sizing: border-box;
@@ -53,5 +53,13 @@ const Content = styled.div`
 const ItemHeading = styled.h4`
     margin-bottom: 0.5em;
 `
+const StyledLink = styled.a`
+    text-decoration: underline;
+    color: inherit;
 
-export { MyButton, Title, Content, FormTitle, FormInput, ItemHeading }; 
+    &:hover {
+        color: #4CAF50;
+    }
+`
+
+export { MyButton, Title, Content, FormTitle, FormInput, ItemHeading, StyledLink }; 

@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import Link from 'next/link';
 import React from 'react';
 import axios from 'axios';
-import { Title, Content, MyButton, FormTitle, FormInput } from '../components';
+import { Title, Content, MyButton, FormTitle, FormInput , StyledLink} from '../components';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
@@ -28,7 +28,11 @@ export default function Home() {
                         <tbody>
                     {items.map(item => (
                         <tr key={item.sku}>
-                            <td><Link href={`/item/${item.sku}`}>{item.sku}</Link></td>
+                            <td>
+                                <Link href={`/item/${item.sku}`} passHref >
+                                    <StyledLink>{item.sku}</StyledLink>
+                                </Link>
+                            </td>
                             <td>{item.name}</td>
                             <td>{item.count}</td>
                         </tr>
