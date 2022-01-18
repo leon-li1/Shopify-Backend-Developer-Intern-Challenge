@@ -4,7 +4,6 @@ import { FormEvent } from 'react';
 import useSWR from 'swr';
 import { Title, Content, MyButton, FormInput } from '../../components';
 import axios from 'axios';
-import { FOCUS_EVENT } from 'swr/dist/constants/revalidate-events';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 

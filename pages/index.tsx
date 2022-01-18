@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 import Link from 'next/link';
 import React from 'react';
+import axios from 'axios';
 import { Title, Content, MyButton, FormTitle, FormInput } from '../components';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
