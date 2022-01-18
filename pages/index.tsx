@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import Link from 'next/link';
 import React from 'react';
-import axios from 'axios';
+import { Title, Content, MyButton, FormTitle, FormInput } from '../components';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
@@ -13,28 +13,32 @@ export default function Home() {
 
     return (
         <div>
-            <h1>Inventory Tracker</h1>
-            <button disabled={!items.length} onClick={exportCsv}>Export to CSV</button>
-            {!!items.length && <table>
-                <thead>
-                    <tr>
-                        <th>SKU</th>
-                        <th>Name</th>
-                        <th>Count</th>
-                    </tr>
-                </thead>
-                <tbody>
-            {items.map(item => (
-                <tr key={item.sku}>
-                    <td><Link href={`/item/${item.sku}`}>{item.sku}</Link></td>
-                    <td>{item.name}</td>
-                    <td>{item.count}</td>
-                </tr>
-            ))}
-            </tbody>
-            </table>}
-            {!items.length && <p>Inventory is empty!</p>}
-            <CreateItemForm />
+            <Title>Inventory Tracker</Title>'
+            <Content>
+                <div>
+                    {!!items.length && <table>
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>Name</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    {items.map(item => (
+                        <tr key={item.sku}>
+                            <td><Link href={`/item/${item.sku}`}>{item.sku}</Link></td>
+                            <td>{item.name}</td>
+                            <td>{item.count}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                    </table>}
+                    <MyButton disabled={!items.length} onClick={exportCsv}>Export to CSV</MyButton>
+                </div>
+                {!items.length && <p>Inventory is empty!</p>}
+                <CreateItemForm />
+            </Content>
         </div>
     )
 }
@@ -42,20 +46,14 @@ export default function Home() {
 const CreateItemForm = () => {
     return (
         <form onSubmit={createItem}>
-            <h3>Create a new item</h3>
-            <label>SKU</label><br/>
-            <input name='sku' placeholder='Enter SKU'/><br/>
-            <label>Name</label><br/>
-            <input name='name' placeholder='Enter name'/><br/>
-            <label>Description</label><br/>
-            <input name='description' placeholder='Enter description'/><br/>
-            <label>Size</label><br/>
-            <input name='size' placeholder='Enter size'/><br/>
-            <label>Color</label><br/>
-            <input name='color' placeholder='Enter color'/><br/>
-            <label>Count</label><br/>
-            <input type='number' name='count' defaultValue={1}/><br/>
-            <button type='submit'>Create</button>
+            <FormTitle>Create a new item</FormTitle>
+            <FormInput name='sku' placeholder='Enter SKU'/><br/>
+            <FormInput name='name' placeholder='Enter name'/><br/>
+            <FormInput name='description' placeholder='Enter description'/><br/>
+            <FormInput name='size' placeholder='Enter size'/><br/>
+            <FormInput name='color' placeholder='Enter color'/><br/>
+            <FormInput name='count' placeholder='Enter count'/><br/>
+            <MyButton type='submit'>Create</MyButton>
         </form>
     );
 }

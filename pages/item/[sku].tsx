@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FormEvent } from 'react';
 import useSWR from 'swr';
+import { Title, Content, MyButton, FormInput } from '../../components';
 import axios from 'axios';
+import { FOCUS_EVENT } from 'swr/dist/constants/revalidate-events';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
@@ -14,25 +16,20 @@ const ItemPage = () => {
     if (!item) return <div>loading...</div>
     
     return (
-        <div>
-            <Link href='/'><button>Back to items</button></Link>
-            <h1>{item.sku} – {item.name}</h1>
+        <Content>
+            <Title>Inventory Tracker</Title>
+            <h4>{item.sku} – {item.name}</h4>
             <form onSubmit={e => updateItem(sku, e)}>
-                <label>Name</label><br/>
-                <input name='name' defaultValue={item.name} /><br/>
-                <label>Description</label><br/>
-                <input name='description' defaultValue={item.description}/><br/>
-                <label>Color</label><br/>
-                <input name='color' defaultValue={item.color} placeholder='No color'/><br/>
-                <label>Size</label><br/>
-                <input name='size' defaultValue={item.size} placeholder='No size'/><br/>
-                <label>Count</label><br/>
-                <input type='number' name='count' defaultValue={item.count}/><br/><br/>
-                <button type='submit'>Save</button>
+                <FormInput name='name' defaultValue={item.name} /><br/>
+                <FormInput name='description' defaultValue={item.description}/><br/>
+                <FormInput name='color' defaultValue={item.color} placeholder='No color'/><br/>
+                <FormInput name='size' defaultValue={item.size} placeholder='No size'/><br/>
+                <FormInput type='number' name='count' defaultValue={item.count}/><br/><br/>
+                <MyButton type='submit'>Save</MyButton>
             </form>
-            <br/>
-            <button onClick={() => deleteItem(sku)}>Delete this Item</button>
-        </div>
+            <MyButton onClick={() => deleteItem(sku)}>Delete this Item</MyButton>
+            <Link href='/'><MyButton>Back to items</MyButton></Link>
+        </Content>
     )
 }
 
