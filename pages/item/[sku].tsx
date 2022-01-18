@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FormEvent } from 'react';
 import useSWR from 'swr';
-import { Title, Content, MyButton, FormInput } from '../../components';
+import { Title, Content, MyButton, FormInput, ItemHeading } from '../../components';
 import axios from 'axios';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
@@ -17,13 +17,13 @@ const ItemPage = () => {
     return (
         <Content>
             <Title>Inventory Tracker</Title>
-            <h4>{item.sku} – {item.name}</h4>
+            <ItemHeading>{item.sku} – {item.name}</ItemHeading>
             <form onSubmit={e => updateItem(sku, e)}>
-                <FormInput name='name' defaultValue={item.name} /><br/>
-                <FormInput name='description' defaultValue={item.description}/><br/>
+                <FormInput name='name' defaultValue={item.name} placeholder='Name'/><br/>
+                <FormInput name='description' defaultValue={item.description} placeholder='Description'/><br/>
                 <FormInput name='color' defaultValue={item.color} placeholder='No color'/><br/>
                 <FormInput name='size' defaultValue={item.size} placeholder='No size'/><br/>
-                <FormInput type='number' name='count' defaultValue={item.count}/><br/><br/>
+                <FormInput type='number' name='count' defaultValue={item.count} placeholder='Count'/><br/><br/>
                 <MyButton type='submit'>Save</MyButton>
             </form>
             <MyButton onClick={() => deleteItem(sku)}>Delete this Item</MyButton>

@@ -53,7 +53,7 @@ const CreateItemForm = () => {
             <FormInput name='description' placeholder='Enter description'/><br/>
             <FormInput name='size' placeholder='Enter size'/><br/>
             <FormInput name='color' placeholder='Enter color'/><br/>
-            <FormInput name='count' placeholder='Enter count'/><br/>
+            <FormInput type='number' name='count' placeholder='Enter count'/><br/>
             <MyButton type='submit'>Create</MyButton>
         </form>
     );

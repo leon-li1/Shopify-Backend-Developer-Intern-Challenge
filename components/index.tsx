@@ -50,4 +50,8 @@ const Content = styled.div`
     flex-direction: column;    
 `
 
-export { MyButton, Title, Content, FormTitle, FormInput };
+const ItemHeading = styled.h4`
+    margin-bottom: 0.5em;
+`
+
+export { MyButton, Title, Content, FormTitle, FormInput, ItemHeading }; 
