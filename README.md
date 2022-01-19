@@ -6,7 +6,7 @@ Backend developer challenge for Shopify internship application by Leon Li.
 ## Introduction
 This is my personal take on the challenge to create an inventory tracking web application for a logistics company. This application allows users to keep track of their store inventory by creating, editing, deleting and viewing a list of inventory items.
 
-## Screenrecordings
+## Images
 ![adding an item](images/add_item.gif)
 ![exporting items](images/export_items.gif)
 
@@ -19,13 +19,13 @@ To support this web application, I have created an API with 6 routes to support 
 This route adds an item to your store inventory.
 
 2. GET /api/item/{sku} \
-This route retrieves a specific inventory item with the given url parameter as its sku.
+This route retrieves a specific inventory item with the given url path parameter as its sku.
 
 3. PUT /api/item/{sku} \
-This route modifies an existing inventory item with the given url parameter as its sku (400 error if no such item exists).
+This route modifies an existing inventory item with the given url path parameter as its sku (400 error if no such item exists).
 
 4. DELETE /api/item/{sku} \
-This route deletes an existing inventory item with the given url parameter as its sku (400 error if no such item exists).
+This route deletes an existing inventory item with the given url path parameter as its sku (400 error if no such item exists).
 
 5. GET /api/item/list \
 This route lists all inventory items.
