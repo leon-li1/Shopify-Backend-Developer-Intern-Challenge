@@ -11,7 +11,7 @@ This is my personal take on the challenge to create an inventory tracking web ap
 ![exporting items](images/export_items.gif)
 
 
-## API (Repo link [here](https://github.com/leon-li1/Shopify-Backend-Developer-Intern-Challenge-Backend-Server))
+## API (Repo link [here](https://github.com/leon-li1/Shopify-Backend-Developer-Intern-Challenge-Server))
 
 To support this web application, I have created an API with 6 routes to support basic CRUD functionality and exporting inventory items to a CSV file.
 
