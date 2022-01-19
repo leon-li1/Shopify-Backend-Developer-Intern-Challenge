@@ -1,7 +1,7 @@
 # Shopify-Backend-Developer-Intern-Challenge[^1]
 Backend developer challenge for Shopify internship application by Leon Li.
 
-[Click here to try it out!](https://leonli-shopify-backend-challenge.vercel.app/)
+[Click here to try it out!](https://leonli-shopify-backend-challenge.vercel.app/)[^2]
 
 ## Introduction
 This is my personal take on the challenge to create an inventory tracking web application for a logistics company. This application allows users to keep track of their store inventory by creating, editing, deleting and viewing a list of inventory items.
@@ -40,3 +40,4 @@ Built with FastAPI (Python3) on the backend and NextJS (TypeScript) on the front
 Deployed the backend on Heroku using a PostgreSQL database hosted on AWS and deployed the frontend on Vercel.
 
 [^1]: Click [here](https://docs.google.com/document/d/1z9LZ_kZBUbg-O2MhZVVSqTmvDko5IJWHtuFmIu_Xg1A/edit#) for original challenge link
+[^2]: It may take a few seconds for Heroku to start the server up, just refresh and you will be good :)
