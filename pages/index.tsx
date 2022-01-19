@@ -50,7 +50,7 @@ export default function Home() {
 
 const CreateItemForm = () => {
     return (
-        <form onSubmit={createItem}>
+        <form onSubmit={createItem} autoComplete='off'>
             <FormTitle>Create a new item</FormTitle>
             <FormInput name='sku' placeholder='Enter SKU'/><br/>
             <FormInput name='name' placeholder='Enter name'/><br/>

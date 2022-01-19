@@ -18,7 +18,7 @@ const ItemPage = () => {
         <Content>
             <Title>Inventory Tracker</Title>
             <ItemHeading>{item.sku} – {item.name}</ItemHeading>
-            <form onSubmit={e => updateItem(sku, e)}>
+            <form onSubmit={e => updateItem(sku, e)} autoComplete='off'>
                 <FormInput name='name' defaultValue={item.name} placeholder='Name'/><br/>
                 <FormInput name='description' defaultValue={item.description} placeholder='Description'/><br/>
                 <FormInput name='color' defaultValue={item.color} placeholder='No color'/><br/>
